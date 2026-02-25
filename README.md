@@ -2,7 +2,7 @@
 
 This is just a small addon I created to help me paint my 2D tilemap scenes. It has a variey of brush shapes, can draw filled shapes or outlines with a variable border width, and can change the density of the brush.
 
-![./screenshot.png](Screenshot demonstrating the various brushes available)
+![Screenshot demonstrating the various brushes available](./screenshot.png)
 
 ## Installation
 
