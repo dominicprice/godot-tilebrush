@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://bycemrn2idlva"]
+
+[ext_resource type="Script" uid="uid://cwpxwqr0iri77" path="res://addons/tilebrush/dock.gd" id="1_03sas"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03sas"]
+bg_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.050980393)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Dock" type="ScrollContainer" unique_id=756130895]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_03sas")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=848595158]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TileMapNameLabel" type="LineEdit" parent="VBoxContainer" unique_id=2141629613]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "The currently selected tilemap"
+placeholder_text = "No tilemap selected"
+editable = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=554052897]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TerrainTreeContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=1279855448]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TerrainTree" type="Tree" parent="VBoxContainer/HBoxContainer/TerrainTreeContainer" unique_id=888128683]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_03sas")
+hide_root = true
+
+[node name="OptionsContainer" type="GridContainer" parent="VBoxContainer/HBoxContainer" unique_id=1809681751]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 2
+
+[node name="BrushShapeLabel" type="Label" parent="VBoxContainer/HBoxContainer/OptionsContainer" unique_id=1022297176]
+layout_mode = 2
+tooltip_text = "The shape of the brush"
+mouse_filter = 1
+text = "Shape"
+
+[node name="BrushShapeInput" type="OptionButton" parent="VBoxContainer/HBoxContainer/OptionsContainer" unique_id=1927995953]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+selected = 0
+allow_reselect = true
+item_count = 4
+popup/item_0/text = "Ellipse"
+popup/item_0/id = 0
+popup/item_1/text = "Rectangle"
+popup/item_1/id = 1
+popup/item_2/text = "Diamond"
+popup/item_2/id = 2
+popup/item_3/text = "Cross"
+popup/item_3/id = 4
+
+[node name="BrushSizeLabel" type="Label" parent="VBoxContainer/HBoxContainer/OptionsContainer" unique_id=409474724]
+layout_mode = 2
+tooltip_text = "The size of the bounding brush in tiles, horizontal x vertical"
+mouse_filter = 1
+text = "Dimensions"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/OptionsContainer" unique_id=880034673]
+layout_mode = 2
+
+[node name="BrushWidthInput" type="SpinBox" parent="VBoxContainer/HBoxContainer/OptionsContainer/HBoxContainer" unique_id=1300767187]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 1.0
+value = 3.0
+
+[node name="BrushSizeLinkButton" type="Button" parent="VBoxContainer/HBoxContainer/OptionsContainer/HBoxContainer" unique_id=595796205]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Toggle whether the dimensions are linked to each other"
+toggle_mode = true
+text = "x"
+
+[node name="BrushHeightInput" type="SpinBox" parent="VBoxContainer/HBoxContainer/OptionsContainer/HBoxContainer" unique_id=1125979628]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 1.0
+value = 3.0
+
+[node name="BrushDensityLabel" type="Label" parent="VBoxContainer/HBoxContainer/OptionsContainer" unique_id=705351061]
+layout_mode = 2
+tooltip_text = "If set to a value less than 1, tiles will be removed randomly from the brush so that this fraction are painted"
+mouse_filter = 1
+text = "Density"
+
+[node name="BrushDensityInput" type="SpinBox" parent="VBoxContainer/HBoxContainer/OptionsContainer" unique_id=260460079]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="FillLabel" type="Label" parent="VBoxContainer/HBoxContainer/OptionsContainer" unique_id=44194398]
+layout_mode = 2
+tooltip_text = "If enabled, the brush will be filled, otherwise only the outline of the brush shape will be painted"
+mouse_filter = 1
+text = "Fill"
+
+[node name="BrushFillCheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer/OptionsContainer" unique_id=2084333787]
+unique_name_in_owner = true
+layout_mode = 2
+button_pressed = true
+
+[node name="BorderThicknessLabel" type="Label" parent="VBoxContainer/HBoxContainer/OptionsContainer" unique_id=1469025322]
+layout_mode = 2
+tooltip_text = "Determines how many tiles thick the border of the shape to be painted is. Ignored if fill is enabled."
+mouse_filter = 1
+text = "Border thickness"
+
+[node name="BorderThicknessInput" type="SpinBox" parent="VBoxContainer/HBoxContainer/OptionsContainer" unique_id=873544036]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 1.0
+value = 1.0
+rounded = true
