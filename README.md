@@ -16,7 +16,7 @@ git clone https://github.com/dominicprice/godot-tilebrush
 mkdir -p ~/project/addons
 
 # copy the tilebrush folder into your addons folder
-cp -r godot-tilebrush/addons/tilebrush ~/projeect/addons/tilebrush
+cp -r godot-tilebrush/addons/tilebrush ~/project/addons/tilebrush
 ```
 
 Then, inside your editor, navigate using the top menu to Project -> Project settings -> Plugins and then tick the checkbox to enable TileBrush
